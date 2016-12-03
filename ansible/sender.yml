@@ -1,5 +1,4 @@
 - hosts: sender
   roles:
-    - git
     - ruby
     - fluentd-benchmark
