@@ -48,7 +48,7 @@
 - name: add gempath
   lineinfile:
     dest: ~/.bash_profile
-    line: "export PATH=\"$(gem environment gempath | sed -e s/:/\\/bin:/g)/bin:$PATH\""
+    line: "export PATH=\"$(gem environment gempath | sed -e s/:/\\\\/bin:/g)/bin:$PATH\""
 
 - name: install bundler
   gem:
