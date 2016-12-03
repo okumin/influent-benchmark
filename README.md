@@ -25,3 +25,30 @@ $ ~/fluentd-benchmark/one_forward/agent.conf # change the target host address
 ```
 $ ansible-playbook -i load receiver.yml
 ```
+
+## Benchmark(Fluentd)
+
+### 1. Start the receiver
+
+```
+$ cd ~/fluentd-benchmark/in_forward
+$ bundle
+$ rbenv rehash
+$ bundle exec fluentd -c receiver.conf
+```
+
+### 2. Start the sender
+
+```
+$ cd ~/fluentd-benchmark/in_forward
+$ bundle
+$ rbenv rehash
+$ bundle exec fluentd -c agent.conf
+```
+
+### 3. Run benchmark
+
+```
+$ cd ~/fluentd-benchmark/in_forward
+$ bundle exec dummer -c dummer.conf -r {message/sec}
+```
