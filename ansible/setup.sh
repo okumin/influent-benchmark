@@ -5,3 +5,5 @@ sudo yum -y install ansible
 
 ssh-keygen
 cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+
+source ~/.bash_profile
