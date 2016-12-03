@@ -1,0 +1,10 @@
+- name: sbt repo
+  get_url:
+    url: https://bintray.com/sbt/rpm/rpm
+    dest: /etc/yum.repos.d/bintray-sbt-rpm.repo
+  become: true
+
+- name: install sbt
+  yum:
+    name: sbt
+  become: true
