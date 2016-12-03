@@ -45,6 +45,11 @@
 - name: use ruby
   shell: "rbenv global {{ ruby_version }}"
 
+- name: add gempath
+  lineinfile:
+    dest: ~/.bash_profile
+    line: "export PATH=\"$(gem environment gempath):$PATH\""
+
 - name: install bundler
   gem:
     name: bundler
