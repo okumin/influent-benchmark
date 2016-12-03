@@ -44,3 +44,7 @@
 
 - name: use ruby
   shell: "rbenv global {{ ruby_version }}"
+
+- name: install bundler
+  gem:
+    name: bundler
