@@ -1,0 +1,5 @@
+- hosts: receiver
+  roles:
+    - git
+    - ruby
+    - fluentd-benchmark

@@ -1,0 +1,46 @@
+- name: install dependencies
+  yum:
+    name: "{{ item }}"
+  with_items:
+    - bzip2
+    - gcc
+    - openssl-devel
+    - readline-devel
+    - zlib-devel
+  become: true
+
+- name: git clone rbenv
+  git:
+    repo: https://github.com/sstephenson/rbenv.git
+    dest: ~/.rbenv
+
+- name: git clone ruby-build
+  git:
+    repo: git://github.com/sstephenson/ruby-build.git
+    dest: ~/.rbenv/plugins/ruby-build
+
+- name: register home directory
+  shell: "getent passwd {{ ansible_env.USER }} | cut -d: -f6"
+  register: home_directory
+
+- name: install ruby-build
+  shell: "{{ home_directory.stdout }}/.rbenv/plugins/ruby-build/install.sh"
+  become: true
+
+- name: update .bash_profile
+  lineinfile:
+    dest: ~/.bash_profile
+    line: "{{ item }}"
+  with_items:
+    - "export PATH=\"$HOME/.rbenv/bin:$PATH\""
+    - "export PATH=\"$HOME/.rbenv/shims:$PATH\""
+    - "eval \"$(rbenv init -)\""
+
+- name: install ruby
+  shell: "rbenv install -s -v {{ ruby_version }}"
+
+- name: rehash
+  shell: rbenv rehash
+
+- name: use ruby
+  shell: "rbenv global {{ ruby_version }}"

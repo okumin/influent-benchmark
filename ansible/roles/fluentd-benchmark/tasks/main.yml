@@ -1,0 +1,9 @@
+- name: install sysstat
+  yum:
+    name: sysstat
+  become: true
+
+- name: git clone fluentd-benchmark
+  git:
+    repo: https://github.com/fluent/fluentd-benchmark
+    dest: ~/fluentd-benchmark
