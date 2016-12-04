@@ -18,12 +18,14 @@ $ ./setup.sh
 ```
 $ ansible-playbook -i load sender.yml
 $ vi ~/fluentd-benchmark/one_forward/agent.conf # change the target host address
+$ source ~/.bash_profile
 ```
 
 ### Receiver node
 
 ```
 $ ansible-playbook -i load receiver.yml
+$ source ~/.bash_profile
 ```
 
 ## Benchmark(Fluentd)
