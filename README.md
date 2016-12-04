@@ -16,8 +16,8 @@ $ ./setup.sh
 ### Sender node
 
 ```
-$ ansible-playbook -i load receiver.yml
-$ ~/fluentd-benchmark/one_forward/agent.conf # change the target host address
+$ ansible-playbook -i load sender.yml
+$ vi ~/fluentd-benchmark/one_forward/agent.conf # change the target host address
 ```
 
 ### Receiver node
