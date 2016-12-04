@@ -2,4 +2,5 @@
   roles:
     - ruby
     - fluentd-benchmark
+    - java
     - sbt
