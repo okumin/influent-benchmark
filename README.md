@@ -28,22 +28,22 @@ $ ansible-playbook -i load receiver.yml
 
 ## Benchmark(Fluentd)
 
-### 1. Start the receiver
-
-```
-$ cd ~/fluentd-benchmark/in_forward
-$ bundle
-$ rbenv rehash
-$ bundle exec fluentd -c receiver.conf
-```
-
-### 2. Start the sender
+### 1. Start the sender
 
 ```
 $ cd ~/fluentd-benchmark/in_forward
 $ bundle
 $ rbenv rehash
 $ bundle exec fluentd -c agent.conf
+```
+
+### 2. Start the receiver
+
+```
+$ cd ~/fluentd-benchmark/in_forward
+$ bundle
+$ rbenv rehash
+$ bundle exec fluentd -c receiver.conf
 ```
 
 ### 3. Run benchmark
