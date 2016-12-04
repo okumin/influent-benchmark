@@ -28,7 +28,7 @@ $ ansible-playbook -i load receiver.yml
 $ source ~/.bash_profile
 ```
 
-## Benchmark(Fluentd)
+## Benchmark
 
 ### 1. Start the sender
 
@@ -41,11 +41,21 @@ $ bundle exec fluentd -c agent.conf
 
 ### 2. Start the receiver
 
+When testing Fluentd,
+
 ```
 $ cd ~/fluentd-benchmark/in_forward
 $ bundle
 $ rbenv rehash
 $ bundle exec fluentd -c receiver.conf
+```
+
+When testing Influent,
+
+```
+$ cd ~/influent-benchmark
+$ sbt compile
+$ sbt "runMain benchmark.java.Counter"
 ```
 
 ### 3. Run benchmark
