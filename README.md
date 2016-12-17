@@ -55,8 +55,8 @@ When testing Influent,
 ```
 cd ~/influent
 git checkout {test branch}
-sbt compile
-sbt "runMain sample.Counter"
+sbt "project influentJavaSample" compile
+sbt "project influentJavaSample" "runMain sample.Counter"
 ```
 
 ### 3. Run benchmark
