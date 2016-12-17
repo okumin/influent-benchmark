@@ -1,0 +1,4 @@
+- name: git clone influent
+  git:
+    repo: https://github.com/okumin/influent.git
+    dest: ~/influent
