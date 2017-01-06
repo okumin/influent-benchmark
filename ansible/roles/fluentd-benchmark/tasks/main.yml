@@ -5,7 +5,7 @@
 
 - name: git clone fluentd-benchmark
   git:
-    repo: https://github.com/fluent/fluentd-benchmark
+    repo: https://github.com/okumin/fluentd-benchmark.git
     dest: ~/fluentd-benchmark
 
 - name: fix fluentd version
