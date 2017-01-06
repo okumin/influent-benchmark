@@ -6,10 +6,19 @@
 - name: git clone fluentd-benchmark
   git:
     repo: https://github.com/okumin/fluentd-benchmark.git
-    dest: ~/fluentd-benchmark
+    dest: "~/fluentd-benchmark-{{ item }}"
+  with_items: "{{ fluentd_versions }}"
 
 - name: fix fluentd version
   lineinfile:
-    dest: ~/fluentd-benchmark/in_forward/Gemfile
+    dest: "~/fluentd-benchmark-{{ item }}/in_forward/Gemfile"
     regexp: "^gem 'fluentd'"
-    line: "gem 'fluentd', '{{ fluentd_version }}'"
+    line: "gem 'fluentd', '{{ item }}'"
+  with_items: "{{ fluentd_versions }}"
+
+- name: change the target host
+  lineinfile:
+    dest: "~/fluentd-benchmark-{{ item }}/one_forward/agent.conf"
+    regexp: "host 127.0.0.1 # FIX ME"
+    line: "{{ receiver_host }}"
+  with_items: "{{ fluentd_versions }}"
