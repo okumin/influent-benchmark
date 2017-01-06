@@ -16,7 +16,7 @@
 
 - name: git clone ruby-build
   git:
-    repo: git://github.com/sstephenson/ruby-build.git
+    repo: https://github.com/sstephenson/ruby-build.git
     dest: ~/.rbenv/plugins/ruby-build
 
 - name: register home directory
