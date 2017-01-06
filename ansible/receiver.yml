@@ -5,3 +5,5 @@
     - java
     - sbt
     - influent
+  vars:
+    is_sender: false

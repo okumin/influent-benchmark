@@ -22,3 +22,4 @@
     regexp: "host 127.0.0.1 # FIX ME"
     line: "{{ receiver_host }}"
   with_items: "{{ fluentd_versions }}"
+  when: is_sender

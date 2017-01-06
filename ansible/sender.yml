@@ -2,3 +2,5 @@
   roles:
     - ruby
     - fluentd-benchmark
+  vars:
+    is_sender: true
