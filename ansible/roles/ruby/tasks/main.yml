@@ -37,8 +37,8 @@
     - "eval \"$(rbenv init -)\""
 
 - name: install ruby
-  shell: "rbenv install -s -v {{ item }}"
-  with_items: "{{ ruby_versions  }}"
+  shell: "rbenv install -s -v {{ item.ruby_version }}"
+  with_items: "{{ fluentd_versions }}"
 
 - name: rehash
   shell: rbenv rehash

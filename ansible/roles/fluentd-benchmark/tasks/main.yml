@@ -9,11 +9,17 @@
     dest: "~/fluentd-benchmark-{{ item.label }}"
   with_items: "{{ fluentd_versions }}"
 
+- name: set ruby version
+  shell: "rbenv local {{ item.ruby_version }}"
+  args:
+    chdir: "~/fluentd-benchmark-{{ item.label }}"
+  with_items: "{{ fluentd_versions }}"
+
 - name: fix fluentd version
   lineinfile:
     dest: "~/fluentd-benchmark-{{ item.label }}/in_forward/Gemfile"
     regexp: "^gem 'fluentd'"
-    line: "gem 'fluentd', '{{ item.version }}'"
+    line: "gem 'fluentd', '{{ item.fluentd_version }}'"
   with_items: "{{ fluentd_versions }}"
 
 - name: change the target host
