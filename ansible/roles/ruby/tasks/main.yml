@@ -39,15 +39,3 @@
 - name: install ruby
   shell: "rbenv install -s -v {{ item.ruby_version }}"
   with_items: "{{ fluentd_versions }}"
-
-- name: rehash
-  shell: rbenv rehash
-
-- name: add gempath
-  lineinfile:
-    dest: ~/.bash_profile
-    line: "export PATH=\"$(gem environment gempath | sed -e s/:/\\\\/bin:/g)/bin:$PATH\""
-
-- name: install bundler
-  gem:
-    name: bundler

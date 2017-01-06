@@ -29,3 +29,14 @@
     line: "{{ receiver_host }}"
   with_items: "{{ fluentd_versions }}"
   when: is_sender
+
+- name: bundle install
+  shell: |
+    rbenv rehash
+    gem install bundler
+    rbenv rehash
+    bundle install
+    rbenv rehash
+  args:
+    chdir: "~/fluentd-benchmark-{{ item.label }}/in_forward"
+  with_items: "{{ fluentd_versions }}"
