@@ -37,13 +37,11 @@
     - "eval \"$(rbenv init -)\""
 
 - name: install ruby
-  shell: "rbenv install -s -v {{ ruby_version }}"
+  shell: "rbenv install -s -v {{ item }}"
+  with_items: "{{ ruby_versions  }}"
 
 - name: rehash
   shell: rbenv rehash
-
-- name: use ruby
-  shell: "rbenv global {{ ruby_version }}"
 
 - name: add gempath
   lineinfile:
