@@ -1,6 +1,7 @@
-#!/bin/bash
+#!/bin/bash -eu
 
 RECEIVER_HOST=$1
+ping -c 1 $RECEIVER_HOST
 
 cd ~/influent-benchmark/ansible
 ./setup.sh
