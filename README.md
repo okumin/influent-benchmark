@@ -1,31 +1,27 @@
 # influent-benchmark
 
+Build servers to test Influent and Fluentd.
+
 ## Setup
 
 ### Common
 
-Press enter when creating ssh keys on `setup.sh`.
+### Receiver node
 
 ```
+cd ~
 sudo yum -y install git
 git clone https://github.com/okumin/influent-benchmark.git
-cd influent-benchmark/ansible
-./setup.sh
+./influent-benchmark/setup_receiver.sh
 ```
 
 ### Sender node
 
 ```
-ansible-playbook -i load sender.yml
-vi ~/fluentd-benchmark/one_forward/agent.conf # change the target host address
-source ~/.bash_profile
-```
-
-### Receiver node
-
-```
-ansible-playbook -i load receiver.yml
-source ~/.bash_profile
+cd ~
+sudo yum -y install git
+git clone https://github.com/okumin/influent-benchmark.git
+./influent-benchmark/setup_sender.sh { target host name or ip address }
 ```
 
 ## Benchmark
