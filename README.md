@@ -54,25 +54,16 @@ git checkout ${TEST_BRANCH}
 sbt "project influentJavaSample" "compile" "runMain sample.Counter"
 ```
 
-### 2. Start the sender
+### 2. Start benchmark
 
-When testing by old protocol,
-
-```
-cd ~/fluentd-benchmark-0.12/in_forward
-bundle exec fluentd -c agent.conf
-```
-
-When testing by new protocol,
+When testing by Fluentd 0.12 protocol,
 
 ```
-cd ~/fluentd-benchmark-0.12/in_forward
-bundle exec fluentd -c agent.conf
+~/influent-benchmark/run_benchmark.sh 0.12 {message/sec}
 ```
 
-### 3. Run benchmark
+When testing by Fluentd 0.14 protocol,
 
 ```
-cd ~/fluentd-benchmark-0.12/in_forward
-bundle exec dummer -c dummer.conf -r {message/sec}
+~/influent-benchmark/run_benchmark.sh 0.14 {message/sec}
 ```
