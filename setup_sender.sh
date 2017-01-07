@@ -8,4 +8,3 @@ cd ~/influent-benchmark/ansible
 
 cd ~/influent-benchmark/ansible
 ansible-playbook -i load sender.yml --extra-vars "receiver_host=${RECEIVER_HOST}"
-source ~/.bash_profile

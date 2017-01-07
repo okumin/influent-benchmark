@@ -5,4 +5,3 @@ cd ~/influent-benchmark/ansible
 
 cd ~/influent-benchmark/ansible
 ansible-playbook -i load receiver.yml
-source ~/.bash_profile
