@@ -25,8 +25,8 @@
 - name: change the target host
   lineinfile:
     dest: "~/fluentd-benchmark-{{ item.label }}/one_forward/agent.conf"
-    regexp: "host 127.0.0.1 # FIX ME"
-    line: "{{ receiver_host }}"
+    regexp: "      host 127.0.0.1 # FIX ME"
+    line: "      host {{ receiver_host }}"
   with_items: "{{ fluentd_versions }}"
   when: is_sender
 
