@@ -9,10 +9,9 @@ Build servers to test Influent and Fluentd.
 ### Receiver node
 
 ```
-cd ~
 sudo yum -y install git
-git clone https://github.com/okumin/influent-benchmark.git
-./influent-benchmark/setup_receiver.sh
+git clone https://github.com/okumin/influent-benchmark.git ~/influent-benchmark
+~/influent-benchmark/setup_receiver.sh
 source ~/.bash_profile
 ```
 
@@ -20,10 +19,9 @@ source ~/.bash_profile
 
 ```
 RECEIVER_HOST={host name or ip address of target host}
-cd ~
 sudo yum -y install git
-git clone https://github.com/okumin/influent-benchmark.git
-./influent-benchmark/setup_sender.sh ${RECEIVER_HOST}
+git clone https://github.com/okumin/influent-benchmark.git ~/influent-benchmark
+~/influent-benchmark/setup_sender.sh ${RECEIVER_HOST}
 source ~/.bash_profile
 ```
 
