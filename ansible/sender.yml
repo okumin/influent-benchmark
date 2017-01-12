@@ -1,6 +1,7 @@
 - hosts: sender
   roles:
     - os
+    - jemalloc
     - ruby
     - fluentd-benchmark
   vars:
