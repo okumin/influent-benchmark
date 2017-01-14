@@ -7,6 +7,7 @@
   git:
     repo: https://github.com/okumin/fluentd-benchmark.git
     dest: "~/fluentd-benchmark-{{ item.label }}"
+    version: influent-benchmark
   with_items: "{{ fluentd_versions }}"
 
 - name: set ruby version
