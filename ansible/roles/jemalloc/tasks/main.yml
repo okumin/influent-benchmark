@@ -10,7 +10,7 @@
 - name: download jemalloc
   get_url:
     url: "http://www.canonware.com/download/jemalloc/jemalloc-{{ jemalloc_version }}.tar.bz2"
-    dest: "~/jemalloc-{{ jemalloc_version }}"
+    dest: "~/jemalloc-{{ jemalloc_version }}.tar.bz2"
 
 - name: decompress jemalloc
   shell: "bzip2 -dc jemalloc-{{ jemalloc_version }}.tar.bz2 | tar xvf -"
