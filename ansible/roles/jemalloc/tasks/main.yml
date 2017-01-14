@@ -15,7 +15,7 @@
 - name: decompress jemalloc
   shell: "bzip2 -dc jemalloc-{{ jemalloc_version }}.tar.bz2 | tar xvf -"
   args:
-    chdir: "~/jemalloc-{{ jemalloc_version }}"
+    chdir: "~/"
 
 - name: make jemalloc
   shell: |
