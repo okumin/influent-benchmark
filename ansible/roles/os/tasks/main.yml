@@ -3,7 +3,7 @@
     dest: /etc/security/limits.conf
     line: "{{ item }}"
   with_items:
-    - root soft nofile 65536
-    - root hard nofile 65536
-    - * soft nofile 65536
-    - * hard nofile 65536
+    - "root soft nofile 65536"
+    - "root hard nofile 65536"
+    - "* soft nofile 65536"
+    - "* hard nofile 65536"
