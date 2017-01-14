@@ -1,8 +1,8 @@
 - hosts: sender
   roles:
     - os
-    - jemalloc
     - ruby
     - fluentd-benchmark
+    - jemalloc
   vars:
     is_sender: true

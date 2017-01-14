@@ -1,11 +1,11 @@
 - hosts: receiver
   roles:
     - os
-    - jemalloc
     - ruby
     - fluentd-benchmark
     - java
     - sbt
     - influent
+    - jemalloc
   vars:
     is_sender: false
