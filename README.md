@@ -2,6 +2,10 @@
 
 Build servers to test Influent and Fluentd.
 
+## Requirements
+
+* CentOS 7
+
 ## Setup
 
 ### Receiver node
