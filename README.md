@@ -4,8 +4,6 @@ Build servers to test Influent and Fluentd.
 
 ## Setup
 
-### Common
-
 ### Receiver node
 
 ```
@@ -46,10 +44,7 @@ bundle exec fluentd -c receiver.conf
 When testing Influent,
 
 ```
-TEST_BRANCH={test branch}
-cd ~/influent
-git checkout ${TEST_BRANCH}
-sbt "project influentJavaSample" "compile" "runMain sample.Counter"
+~/influent/start_influent.sh {test branch}
 ```
 
 ### 2. Start benchmark
