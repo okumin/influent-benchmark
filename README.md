@@ -44,7 +44,7 @@ bundle exec fluentd -c receiver.conf
 When testing Influent,
 
 ```
-~/influent/start_influent.sh {test branch}
+~/influent-benchmark/start_influent.sh {test branch}
 ```
 
 ### 2. Start benchmark

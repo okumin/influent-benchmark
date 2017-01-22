@@ -3,7 +3,7 @@
 TEST_BRANCH=$1
 
 mkdir -p ~/influent-log
-rm ~/influent/influent-java-sample/target/influent-java-sample.jar
+rm -f ~/influent/influent-java-sample/target/influent-java-sample.jar
 
 cd ~/influent
 git checkout $TEST_BRANCH
