@@ -50,9 +50,9 @@ When testing Influent,
 ### 2. Start benchmark
 
 * protocol: 0.12 or 0.14
-* branch: influent-benchmark or influent-benchmark-at-least-once
+* mode: at-most-once or at-least-once
 * message/sec: message per sec
 
 ```
-~/influent-benchmark/run_benchmark.sh {protocol} {branch} {message/sec}
+~/influent-benchmark/run_benchmark.sh {protocol} {mode} {message/sec}
 ```
