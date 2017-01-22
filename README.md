@@ -49,14 +49,10 @@ When testing Influent,
 
 ### 2. Start benchmark
 
-When testing by Fluentd 0.12 protocol,
+* protocol: 0.12 or 0.14
+* branch: influent-benchmark or influent-benchmark-at-least-once
+* message/sec: message per sec
 
 ```
-~/influent-benchmark/run_benchmark.sh 0.12 {message/sec}
-```
-
-When testing by Fluentd 0.14 protocol,
-
-```
-~/influent-benchmark/run_benchmark.sh 0.14 {message/sec}
+~/influent-benchmark/run_benchmark.sh {protocol} {branch} {message/sec}
 ```
