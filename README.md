@@ -31,18 +31,13 @@ source ~/.bash_profile
 
 ### 1. Start the receiver
 
-When testing Fluentd 0.12,
+When testing Fluentd,
+
+* version: 0.12 or 0.14
+* mode: at-most-once or at-least-once
 
 ```
-cd ~/fluentd-benchmark-0.12/in_forward
-bundle exec fluentd -c receiver.conf
-```
-
-When testing Fluentd 0.14,
-
-```
-cd ~/fluentd-benchmark-0.14/in_forward
-bundle exec fluentd -c receiver.conf
+~/influent-benchmark/start_fluentd.sh {version} {mode}
 ```
 
 When testing Influent,
