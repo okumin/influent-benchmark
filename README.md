@@ -15,12 +15,14 @@ sudo yum -y install git
 git clone https://github.com/okumin/influent-benchmark.git ~/influent-benchmark
 ~/influent-benchmark/setup_receiver.sh
 source ~/.bash_profile
+cd ~/influent
+sbt compile
 ```
 
 ### Sender node
 
 ```
-RECEIVER_HOST={host name or ip address of target host}
+RECEIVER_HOST=influent-receiver # host name or ip address of the target
 sudo yum -y install git
 git clone https://github.com/okumin/influent-benchmark.git ~/influent-benchmark
 ~/influent-benchmark/setup_sender.sh ${RECEIVER_HOST}
