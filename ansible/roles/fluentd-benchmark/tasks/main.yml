@@ -52,3 +52,13 @@
   args:
     chdir: "~/fluentd-benchmark-{{ item.label }}/in_forward"
   with_items: "{{ fluentd_versions }}"
+
+- name: make script dir
+  file:
+    path: ~/script
+    state: directory
+
+- name: put flowcounter_total.py
+  template:
+    src: flowcounter_total.py.j2
+    dest: ~/script/flowcounter_total.py

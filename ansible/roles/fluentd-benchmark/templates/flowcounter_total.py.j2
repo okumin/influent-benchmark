@@ -1,0 +1,22 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+import re
+
+LINE_REG = re.compile("\tcount:([0-9]+)\t")
+
+if __name__ == '__main__':
+    datetime = None
+    total = 0
+    while True:
+        line = raw_input()
+        print line
+        match = LINE_REG.search(line)
+        if match is None:
+            continue
+        if line[0:19] == datetime:
+            total += int(match.group(1))
+        else:
+            print total
+            datetime = line[0:19]
+            total = int(match.group(1))
