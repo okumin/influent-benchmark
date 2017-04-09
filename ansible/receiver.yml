@@ -1,6 +1,7 @@
 - hosts: receiver
   roles:
     - os
+    - dstat
     - ruby
     - fluentd-benchmark
     - java

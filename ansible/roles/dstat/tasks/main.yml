@@ -1,0 +1,4 @@
+- name: install dstat
+  yum:
+    name: dstat
+  become: true

@@ -1,6 +1,7 @@
 - hosts: sender
   roles:
     - os
+    - dstat
     - ruby
     - fluentd-benchmark
     - jemalloc
