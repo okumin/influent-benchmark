@@ -35,7 +35,7 @@
   blockinfile:
     dest: "~/fluentd-benchmark-{{ item.label }}/in_forward/receiver.conf"
     insertbefore: BOF
-    line: |
+    block: |
       <system>
         workers #{ENV['FLUENTD_WORKERS']}
       </system>
