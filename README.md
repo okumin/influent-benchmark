@@ -39,13 +39,13 @@ When testing Fluentd,
 * mode: at-most-once or at-least-once
 
 ```
-~/influent-benchmark/start_fluentd.sh {version} {mode}
+~/influent-benchmark/start_fluentd.sh {version} {mode} {parallelism}
 ```
 
 When testing Influent,
 
 ```
-~/influent-benchmark/start_influent.sh {test branch}
+~/influent-benchmark/start_influent.sh {test branch} {parallelism}
 ```
 
 ### 2. Start benchmark

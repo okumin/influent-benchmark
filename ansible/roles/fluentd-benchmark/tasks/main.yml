@@ -31,6 +31,16 @@
   with_items: "{{ fluentd_versions }}"
   when: is_sender
 
+- name: enable multi process
+  lineinfile:
+    dest: "~/fluentd-benchmark-{{ item.label }}/in_forward/receiver.conf"
+    line: "{{ item }}"
+  with_items:
+    - "<system>"
+    - "  workers #{ENV['FLUENTD_WORKERS']}"
+    - "</system>"
+  when: multi_worker_enabled
+
 - name: bundle install
   shell: |
     rbenv rehash
