@@ -37,7 +37,7 @@
     insertbefore: BOF
     block: |
       <system>
-        workers #{ENV['FLUENTD_WORKERS']}
+        workers "#{ENV['FLUENTD_WORKERS']}"
       </system>
   with_items: "{{ fluentd_versions }}"
   when: item.multi_worker_enabled
