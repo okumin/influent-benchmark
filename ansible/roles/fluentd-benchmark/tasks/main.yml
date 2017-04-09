@@ -32,14 +32,15 @@
   when: is_sender
 
 - name: enable multi process
-  lineinfile:
-    dest: "~/fluentd-benchmark-{{ item.label }}/in_forward/receiver.conf"
-    line: "{{ item }}"
-  with_items:
-    - "<system>"
-    - "  workers #{ENV['FLUENTD_WORKERS']}"
-    - "</system>"
-  when: multi_worker_enabled
+  blockinfile:
+    path: "~/fluentd-benchmark-{{ item.label }}/in_forward/receiver.conf"
+    insertbefore: BOF
+    line: |
+      <system>
+        workers #{ENV['FLUENTD_WORKERS']}
+      </system>
+  with_items: "{{ fluentd_versions }}"
+  when: item.multi_worker_enabled
 
 - name: bundle install
   shell: |
