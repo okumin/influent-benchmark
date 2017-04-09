@@ -23,6 +23,13 @@
     line: "gem 'fluentd', '{{ item.fluentd_version }}'"
   with_items: "{{ fluentd_versions }}"
 
+- name: remove flowcounter-simple dependency
+  lineinfile:
+    dest: "~/fluentd-benchmark-{{ item.label }}/in_forward/Gemfile"
+    regexp: "^gem 'fluent-plugin-flowcounter-simple'$"
+    state: absent
+  with_items: "{{ fluentd_versions }}"
+
 - name: change the target host
   lineinfile:
     dest: "~/fluentd-benchmark-{{ item.label }}/one_forward/agent.conf"
@@ -41,6 +48,33 @@
       </system>
   with_items: "{{ fluentd_versions }}"
   when: item.multi_worker_enabled
+
+- name: download flowcounter-simple
+  git:
+    repo: https://github.com/sonots/fluent-plugin-flowcounter-simple.git
+    dest: ~/fluent-plugin-flowcounter-simple
+
+- name: make fluentd plugin directory
+  file:
+    path: /etc/fluent/plugin
+    state: directory
+  become: true
+
+- name: put flowcounter-simple
+  copy:
+    src: ~/fluent-plugin-flowcounter-simple/lib/fluent/plugin/out_flowcounter_simple.rb
+    dest: /etc/fluent/plugin/out_flowcounter_simple.rb
+    remote_src: True
+  become: true
+
+- name: enable multi worker
+  blockinfile:
+    dest: /etc/fluent/plugin/out_flowcounter_simple.rb
+    insertbefore: "^end$"
+    block: |
+        def multi_workers_ready?
+          true
+        end
 
 - name: bundle install
   shell: |
