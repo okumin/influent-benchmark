@@ -58,6 +58,7 @@
   file:
     path: /etc/fluent/plugin
     state: directory
+    mode: 0777
   become: true
 
 - name: put flowcounter-simple
