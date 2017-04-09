@@ -33,7 +33,7 @@
 
 - name: enable multi process
   blockinfile:
-    path: "~/fluentd-benchmark-{{ item.label }}/in_forward/receiver.conf"
+    dest: "~/fluentd-benchmark-{{ item.label }}/in_forward/receiver.conf"
     insertbefore: BOF
     line: |
       <system>
