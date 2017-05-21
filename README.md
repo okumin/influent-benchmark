@@ -2,13 +2,28 @@
 
 Build servers to test Influent and Fluentd.
 
-## Requirements
+## Terraform
+
+### Requirements
+
+* GCP
+* High CPU quota
+  * a sender node uses 32 cpus
+  * a reciver node uses 64 cpus
+
+### Configuration
+
+Edit [google.tf](https://github.com/okumin/influent-benchmark/tree/master/terraform/providers/google/google.tf).
+
+## Ansible
+
+### Requirements
 
 * CentOS 7
 
-## Setup
+### Setup
 
-### Receiver node
+#### Receiver node
 
 ```
 sudo yum -y install git
@@ -19,19 +34,19 @@ cd ~/influent
 sbt compile
 ```
 
-### Sender node
+#### Sender node
 
 ```
-RECEIVER_HOST=influent-receiver # host name or ip address of the target
+RECEIVER_HOST=influent-receiver001 # host name or ip address of the target
 sudo yum -y install git
 git clone https://github.com/okumin/influent-benchmark.git ~/influent-benchmark
 ~/influent-benchmark/setup_sender.sh ${RECEIVER_HOST}
 source ~/.bash_profile
 ```
 
-## Benchmark
+### Benchmark
 
-### 1. Start the receiver
+#### 1. Start the receiver
 
 When testing Fluentd,
 
@@ -48,7 +63,7 @@ When testing Influent,
 ~/influent-benchmark/start_influent.sh {test branch} {parallelism}
 ```
 
-### 2. Start benchmark
+#### 2. Start benchmark
 
 * version: 0.12 or 0.14
 * mode: at-most-once or at-least-once
