@@ -16,6 +16,8 @@ resource "google_compute_instance" "receiver" {
 
   network_interface {
     network = "default"
+    access_config {
+    }
   }
 
   scheduling {

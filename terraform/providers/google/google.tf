@@ -5,6 +5,6 @@ provider "google" {
 
 module "compute" {
   source = "../../modules/google"
-  sender_instance_num = 12
+  sender_instance_num = 15
   receiver_instance_num = 1
 }
