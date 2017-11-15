@@ -8,5 +8,5 @@ rm -f /var/tmp/_var_log_dummy.pos
 rm -f ~/fluentd-benchmark-${VERSION}-${MODE}/in_forward/dummy.log
 
 cd ~/fluentd-benchmark-${VERSION}-${MODE}/in_forward
-bundle exec fluentd -c agent.conf &
-bundle exec dummer -c dummer.conf -r ${MPS}
+LD_PRELOAD=/usr/local/lib/libjemalloc.so bundle exec fluentd -c agent.conf &
+LD_PRELOAD=/usr/local/lib/libjemalloc.so bundle exec dummer -c dummer.conf -r ${MPS}

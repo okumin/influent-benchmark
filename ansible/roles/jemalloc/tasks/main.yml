@@ -32,8 +32,3 @@
   args:
     chdir: "~/jemalloc-{{ jemalloc_version }}"
   become: true
-
-- name: use jemalloc
-  lineinfile:
-    dest: ~/.bash_profile
-    line: "export LD_PRELOAD=\"/usr/local/lib/libjemalloc.so\""
