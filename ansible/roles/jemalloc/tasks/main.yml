@@ -9,7 +9,7 @@
 
 - name: download jemalloc
   get_url:
-    url: "http://www.canonware.com/download/jemalloc/jemalloc-{{ jemalloc_version }}.tar.bz2"
+    url: "https://github.com/jemalloc/jemalloc/releases/download/{{ jemalloc_version }}/jemalloc-{{ jemalloc_version }}.tar.bz2"
     dest: "~/jemalloc-{{ jemalloc_version }}.tar.bz2"
   become: true
 
