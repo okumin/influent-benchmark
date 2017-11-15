@@ -51,10 +51,9 @@ source ~/.bash_profile
 When testing Fluentd,
 
 * version: 0.12 or 0.14
-* mode: at-most-once or at-least-once
 
 ```
-~/influent-benchmark/start_fluentd.sh {version} {mode} {parallelism}
+~/influent-benchmark/start_fluentd.sh {version} {parallelism}
 ```
 
 When testing Influent,
