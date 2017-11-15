@@ -53,6 +53,7 @@
   git:
     repo: https://github.com/sonots/fluent-plugin-flowcounter-simple.git
     dest: ~/fluent-plugin-flowcounter-simple
+    version: c9c098e1d47847fa0c8fa67d330a02c40ef1e7b1
 
 - name: make fluentd plugin directory
   file:
