@@ -1,21 +1,21 @@
 fluentd_versions:
   - label: 0.12-at-most-once
-    fluentd_version: 0.12.35
+    fluentd_version: 0.12.40
     ruby_version: 2.1.10
     multi_worker_enabled: False
     branch: influent-benchmark-at-most-once
   - label: 0.12-at-least-once
-    fluentd_version: 0.12.35
+    fluentd_version: 0.12.40
     ruby_version: 2.1.10
     multi_worker_enabled: False
     branch: influent-benchmark-at-least-once
   - label: 0.14-at-most-once
-    fluentd_version: 0.14.16
+    fluentd_version: 0.14.22
     ruby_version: 2.4.1
     multi_worker_enabled: True
     branch: influent-benchmark-at-most-once
   - label: 0.14-at-least-once
-    fluentd_version: 0.14.16
+    fluentd_version: 0.14.22
     ruby_version: 2.4.1
     multi_worker_enabled: True
     branch: influent-benchmark-at-least-once
