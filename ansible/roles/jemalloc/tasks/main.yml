@@ -11,24 +11,18 @@
   get_url:
     url: "https://github.com/jemalloc/jemalloc/releases/download/{{ jemalloc_version }}/jemalloc-{{ jemalloc_version }}.tar.bz2"
     dest: "~/jemalloc-{{ jemalloc_version }}.tar.bz2"
-  become: true
 
 - name: decompress jemalloc
   shell: "bzip2 -dc jemalloc-{{ jemalloc_version }}.tar.bz2 | tar xvf -"
   args:
     chdir: "~/"
-  become: true
+
+- name: rename jemalloc
+  command: "mv ~/jemalloc-{{ jemalloc_version }} ~/jemalloc"
 
 - name: make jemalloc
   shell: |
     ./configure --disable-debug
     make
   args:
-    chdir: "~/jemalloc-{{ jemalloc_version }}"
-  become: true
-
-- name: install jemalloc
-  shell: make install
-  args:
-    chdir: "~/jemalloc-{{ jemalloc_version }}"
-  become: true
+    chdir: "~/jemalloc"
